@@ -25,17 +25,14 @@ const EditPhoto = (props) => {
 
   const [angle, setAngle] = React.useState(0);
 
-  const [string,setString] = React.useState("")
 
-  React.useEffect(()=>{
-    window.addEventListener("message", message => {
-      setString(prev=>prev+JSON.stringify(message.data))
-              if(message?.data?.hasOwnProperty("imageData")){
-                setImageToBeCropped(message?.data?.imageData)
-                console.log(message?.data?.imageData)
-              }
-            });
-  })
+  window.addEventListener("message", message => {
+   console.log(message.data)
+            if(message?.data?.hasOwnProperty("imageData")){
+              setImageToBeCropped(message?.data?.imageData)
+              console.log(message?.data?.imageData)
+            }
+          });
   useEffect(() => {
     const allRanges = document.querySelectorAll(".range-wrap");
     allRanges.forEach((wrap) => {
@@ -216,7 +213,6 @@ const EditPhoto = (props) => {
   return  (
     <div className="edit-photo-div container-edit-photo">
       <p className="heading-top">
-        {string}
         Make any adjestments to fit the blue outlines for the best results.
       </p>
       <p className="heading-sub">
