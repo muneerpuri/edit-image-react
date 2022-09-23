@@ -25,13 +25,18 @@ const EditPhoto = (props) => {
 
   const [angle, setAngle] = React.useState(0);
 
-  React.useEffect(()=>{
+  React.useEffect(() => {
+    function handleEvent(message) {
+      console.log(message.data);
+    }
 
-    window.addEventListener("message", message => {
-      console.log(message.data) 
-    });
+    // This will only work for Android
+    // https://stackoverflow.com/a/58118984
+    document.addEventListener("message", handleEvent);
 
-  },[])
+    return () =>
+      document.removeEventListener("message", handleEvent);
+  }, []);
   useEffect(() => {
     const allRanges = document.querySelectorAll(".range-wrap");
     allRanges.forEach((wrap) => {
