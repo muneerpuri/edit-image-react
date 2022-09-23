@@ -19,6 +19,10 @@ const EditPhoto = () => {
 
     return () => document.removeEventListener("message", handleEvent);
   }, []);
+  useEffect(()=>{
+    sendDataToReactNativeApp("start")
+
+  },[])
   useEffect(() => {
     const allRanges = document.querySelectorAll(".range-wrap");
     allRanges.forEach((wrap) => {
