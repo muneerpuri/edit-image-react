@@ -24,10 +24,11 @@ const EditPhoto = (props) => {
   const [open, setOpen] = React.useState(false);
 
   const [angle, setAngle] = React.useState(0);
+  const [string,setString] = React.useState("")
 
   React.useEffect(() => {
     function handleEvent(message) {
-      console.log(message.data);
+      setString(message.data);
     }
 
     // This will only work for Android
@@ -219,6 +220,7 @@ const EditPhoto = (props) => {
       <p className="heading-top">
         Make any adjestments to fit the blue outlines for the best results.
       </p>
+      {string}
       <p className="heading-sub">
         Note: You can reposition the image by dragging the edges or corners of
         the crop rectangle, or move the picture.
