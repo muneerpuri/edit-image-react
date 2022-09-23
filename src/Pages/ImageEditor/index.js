@@ -25,14 +25,17 @@ const EditPhoto = (props) => {
 
   const [angle, setAngle] = React.useState(0);
 
+  React.useEffect(()=>{
 
-  window.document.addEventListener("message", message => {
-   console.log(message.data)
-            if(message?.data?.hasOwnProperty("imageData")){
-              setImageToBeCropped(message?.data?.imageData)
-              console.log(message?.data?.imageData)
-            }
-          });
+    window.addEventListener("message", message => {
+     console.log(message.data)
+              if(message?.data?.hasOwnProperty("imageData")){
+                setImageToBeCropped(message?.data?.imageData)
+                console.log(message?.data?.imageData)
+              }
+            });
+
+  },[])
   useEffect(() => {
     const allRanges = document.querySelectorAll(".range-wrap");
     allRanges.forEach((wrap) => {
