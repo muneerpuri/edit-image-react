@@ -27,7 +27,7 @@ const EditPhoto = (props) => {
 
   React.useEffect(()=>{
 
-    window.addEventListener("message", message => {
+    window.document.addEventListener("message", message => {
      console.log(message.data)
               if(message?.data?.hasOwnProperty("imageData")){
                 setImageToBeCropped(message?.data?.imageData)
