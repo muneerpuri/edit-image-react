@@ -205,7 +205,7 @@ const EditPhoto = (props) => {
 
         <button
           className="retake-btn"
-          onClick={() => retake()}
+          onClick={() => sendDataToReactNativeApp("retake")}
           size="large"
         >
           <CameraAlt style={{ margin: "2px" }} />
