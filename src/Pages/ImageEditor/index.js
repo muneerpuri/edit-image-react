@@ -1,25 +1,14 @@
 import React, { useEffect, useRef } from "react";
-
 import "./editPhoto.css";
 import "./component.css";
-// import RotateRight from "@material-ui/icons/RotateRight";
-// import RotateLeft from "@material-ui/icons/RotateLeft";
 import { ZoomIn, ZoomOut, RotateRight, RotateLeft } from "@mui/icons-material";
-import DoneIcon from '@mui/icons-material/Done';
+import DoneIcon from "@mui/icons-material/Done";
 import CameraAlt from "@mui/icons-material/CameraAltOutlined";
-import {img }from './image'
-// import "subjx/dist/style/subjx.css";
-
 import Cropper from "react-cropper";
 import "cropperjs/dist/cropper.css";
-const EditPhoto = (props) => {
-  // let editor = null;
-  const [imageToBeCropped,setImageToBeCropped] = React.useState("");
-  const sendDataToReactNativeApp = async (data) => {
-    console.log(data,"THIS DATA IS SENT")
-    window.ReactNativeWebView.postMessage(data);
-  };
 
+const EditPhoto = () => {
+  const [imageToBeCropped, setImageToBeCropped] = React.useState("");
   const [angle, setAngle] = React.useState(0);
 
   React.useEffect(() => {
@@ -28,8 +17,7 @@ const EditPhoto = (props) => {
     }
     document.addEventListener("message", handleEvent);
 
-    return () =>
-      document.removeEventListener("message", handleEvent);
+    return () => document.removeEventListener("message", handleEvent);
   }, []);
   useEffect(() => {
     const allRanges = document.querySelectorAll(".range-wrap");
@@ -44,8 +32,10 @@ const EditPhoto = (props) => {
     });
   }, []);
 
+  const sendDataToReactNativeApp = async (data) => {
+    window.ReactNativeWebView.postMessage(data);
+  };
   const rotateImg = (a) => {
-
     const imageElement = cropperRef?.current;
     const cropper = imageElement?.cropper;
     cropper.rotate(a - angle);
@@ -59,12 +49,7 @@ const EditPhoto = (props) => {
     cropper.zoom(sc);
   }
 
-
-  const retake = async () => {
-    setImageToBeCropped(img)
-  };
-
-  const saveImg = async (shouldSaveNew = false) => {
+  const saveImg = async () => {
     const imageElement = cropperRef?.current;
     const cropper = imageElement?.cropper;
     const img = cropper
@@ -74,28 +59,8 @@ const EditPhoto = (props) => {
       })
       .toDataURL();
 
-      sendDataToReactNativeApp(img)
-   
+    sendDataToReactNativeApp(img);
   };
-
-  const RotateButtons = [
-    {
-      text: "Rotate Right",
-      icon: RotateRight,
-      onClick: () => {
-        rotateImg(angle + 1);
-        setAngle(angle + 1);
-      }, // rotateImg("right"),
-    },
-    {
-      text: "Rotate Left",
-      icon: RotateLeft,
-      onClick: () => {
-        rotateImg(angle - 1);
-        setAngle(angle - 1);
-      }, // rotateImg("left"),
-    },
-  ];
 
   const Buttons = [
     {
@@ -128,7 +93,6 @@ const EditPhoto = (props) => {
         draw(0.005);
       },
     },
-   
   ];
 
   function setBubble(range, bubble) {
@@ -142,24 +106,9 @@ const EditPhoto = (props) => {
     bubble.style.left = `calc(${newVal}% + (${8 - newVal * 0.15}px))`;
   }
 
-  const renderSelectPhoto = () => {
-    return (
-      <div className="selectPhoto-warning-div">
-        Tap "Get Photo" To Select A Photo
-      </div>
-    );
-  };
-  // const setEditorRef = (ed) => (editor = ed);
-
   const cropperRef = useRef(null);
 
-  const onCrop = () => {
-    const imageElement = cropperRef?.current;
-    const cropper = imageElement?.cropper;
-
-  };
-
-  return  (
+  return (
     <div className="edit-photo-div container-edit-photo">
       <p className="heading-top">
         Make any adjestments to fit the blue outlines for the best results.
@@ -172,13 +121,12 @@ const EditPhoto = (props) => {
         <Cropper
           src={imageToBeCropped}
           id="imgEdit"
-          style={{ height: "646px", width: "640px" ,margin:"auto"}}
+          style={{ height: "646px", width: "640px", margin: "auto" }}
           className="cropper-editor"
           //dragMode="move"
           minContainerWidth={100}
           initialAspectRatio={640 / 646}
           guides={true}
-          crop={onCrop}
           ref={cropperRef}
           aspectRatio={640 / 646}
           viewMode={0}
@@ -190,7 +138,11 @@ const EditPhoto = (props) => {
           {" "}
           {Buttons.map((button) => {
             return (
-              <div key={button.text} onClick={button.onClick} className="edit-photo-button">
+              <div
+                key={button.text}
+                onClick={button.onClick}
+                className="edit-photo-button"
+              >
                 <button.icon
                   style={{
                     cursor: "pointer",
@@ -216,17 +168,12 @@ const EditPhoto = (props) => {
       <div style={{ marginTop: "10px" }}></div>
 
       <div className="done-button-div">
-        <button
-          className="done-btn"
-          onClick={() => saveImg()}
-          size="large"
-        >
-          <DoneIcon style={{color:"white",paddingRight:"5px"}}/>
-          "Done"
+        <button className="done-btn" onClick={() => saveImg()} size="large">
+          <DoneIcon style={{ color: "white", paddingRight: "5px" }} />
+          Done
         </button>
       </div>
-
     </div>
-  ) 
+  );
 };
-export default EditPhoto
+export default EditPhoto;
