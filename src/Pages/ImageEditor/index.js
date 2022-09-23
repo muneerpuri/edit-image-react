@@ -7,7 +7,6 @@ import "./component.css";
 import { ZoomIn, ZoomOut, RotateRight, RotateLeft } from "@mui/icons-material";
 import DoneIcon from '@mui/icons-material/Done';
 import CameraAlt from "@mui/icons-material/CameraAltOutlined";
-import CircularProgress from "@mui/material/CircularProgress";
 import {img }from './image'
 // import "subjx/dist/style/subjx.css";
 
@@ -20,19 +19,13 @@ const EditPhoto = (props) => {
     console.log(data,"THIS DATA IS SENT")
     window.ReactNativeWebView.postMessage(data);
   };
-  const [spinner, setSpinner] = React.useState(false);
-  const [open, setOpen] = React.useState(false);
 
   const [angle, setAngle] = React.useState(0);
-  const [string,setString] = React.useState("")
 
   React.useEffect(() => {
     function handleEvent(message) {
-      setString(message.data);
+      setImageToBeCropped(message.data);
     }
-
-    // This will only work for Android
-    // https://stackoverflow.com/a/58118984
     document.addEventListener("message", handleEvent);
 
     return () =>
@@ -102,58 +95,9 @@ const EditPhoto = (props) => {
         setAngle(angle - 1);
       }, // rotateImg("left"),
     },
-    // {
-    //   text: "Crop",
-    //   icon: Crop,
-    // },
-
-    // {
-    //   text: "Zoom Out",
-    //   icon: ZoomOut,
-    //   onClick: () => {
-    //     draw(-0.075);
-    //   },
-    // },
-    // {
-    //   text: "Zoom In",
-    //   icon: ZoomIn,
-    //   onClick: () => {
-    //     draw(0.075);
-    //   },
   ];
 
   const Buttons = [
-    // {
-    //   text: "Rotate Right",
-    //   icon: RotateRight,
-    //   onClick: () => {
-    //     // if(angle-90<-180){
-    //     //   rotateImg(angle-90)
-    //     //   setAngle(angle-90)
-    //     //   }else{
-    //     //     rotateImg(angle+90)
-    //     //     setAngle(angle+90)
-    //     //   }
-    //   }// rotateImg("right"),
-    // },
-    // {
-    //   text: "Rotate Left",
-    //   icon: RotateLeft,
-    //   onClick: () => {
-    //     // if(angle+90>180){
-    //     //   rotateImg(angle+90)
-    //     //   setAngle(angle+90)
-    //     //   }else{
-    //     //     rotateImg(angle-90)
-    //     //   setAngle(angle-90)
-    //     //   }
-
-    //    }// rotateImg("left"),
-    // },
-    // {
-    //   text: "Crop",
-    //   icon: Crop,
-    // },
     {
       text: "Rotate Right",
       icon: RotateRight,
@@ -220,7 +164,6 @@ const EditPhoto = (props) => {
       <p className="heading-top">
         Make any adjestments to fit the blue outlines for the best results.
       </p>
-      {string}
       <p className="heading-sub">
         Note: You can reposition the image by dragging the edges or corners of
         the crop rectangle, or move the picture.
@@ -279,7 +222,7 @@ const EditPhoto = (props) => {
           size="large"
         >
           <DoneIcon style={{color:"white",paddingRight:"5px"}}/>
-          {spinner ? <CircularProgress /> : "Done"}
+          "Done"
         </button>
       </div>
 
