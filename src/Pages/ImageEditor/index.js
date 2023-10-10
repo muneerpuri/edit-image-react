@@ -7,6 +7,7 @@ import CameraAlt from "@mui/icons-material/CameraAltOutlined";
 import Cropper from "react-cropper";
 import "cropperjs/dist/cropper.css";
 
+import "subjx/dist/style/subjx.css";
 const EditPhoto = () => {
   const [imageToBeCropped, setImageToBeCropped] = React.useState("");
   const [angle, setAngle] = React.useState(0);
@@ -121,11 +122,12 @@ const EditPhoto = () => {
         Note: You can reposition the image by dragging the edges or corners of
         the crop rectangle, or move the picture.
       </p>
+      <div style={{padding:'24px',display:'flex',justifyContent:'center',alignItems:'center',margin:'auto'}}>
       <div className="edit-photo-instructions col-sm-12">
         <Cropper
           src={imageToBeCropped}
           id="imgEdit"
-          style={{ height: "646px", width: "640px", margin: "auto" }}
+          style={{ height: "646px", width: "640px",  }}
           className="cropper-editor"
           //dragMode="move"
           minContainerWidth={100}
@@ -136,6 +138,7 @@ const EditPhoto = () => {
           viewMode={0}
           autoCropArea={1}
         />
+      </div>
       </div>
       <div className="edit-photo-actions">
         <span className="flexButtons">

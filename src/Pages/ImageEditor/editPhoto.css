@@ -1,6 +1,232 @@
 .edit-photo-div {
   text-align: center;
 }
+.retake-btn{
+  border: 1px solid #616161;
+  border-radius: 6px;
+  display: flex;
+  font-size: 10px;
+  text-transform: uppercase;
+  background: transparent;
+  font-family: 'Readex Pro', sans-serif;
+  font-weight: 500;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.heading-top{
+text-align: center;
+font-size: 14px;
+  font-family: 'Readex Pro', sans-serif;
+  font-weight: 500;
+}
+.heading-sub{
+  text-align: center;font-size: 14px;
+  font-family: 'Readex Pro', sans-serif;
+  font-weight: 300;
+  
+}
+.edit-photo-heading2 {
+  margin: 4px;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 46.66px;
+  color: #000000;
+  font-family: Average Sans;
+}
+
+
+
+.edit-photo-actions {
+  width: 600px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container-edit-photo {
+  margin: auto;
+
+}
+.btn-done:hover{
+  background-color: #000000;
+  border: 1px #000000 solid;
+}
+
+.edit-photo-button {
+  border: 1px solid #616161;
+  border-radius: 6px;
+  display: flex;
+  font-size: 10px;
+  font-family: 'Readex Pro', sans-serif;
+  font-weight: 500;
+  padding: 10px;
+  margin-right: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.done-btn{
+  font-size: 10px;
+  border: none;
+  outline: none;
+  font-family: 'Readex Pro', sans-serif;
+  font-weight: 500;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  color: white;
+  text-transform: uppercase;
+  padding: 10px;
+}
+
+.done-button-div {
+  margin: 1rem ;
+  margin-bottom: 4rem  !important;  
+  display: flex;
+  
+  justify-content: center;
+  align-items: center;
+}
+
+.done-button {
+  padding: 0.7% 4% !important;
+  border: 3px solid #719fbb !important;
+}
+
+.selectPhoto-warning-div {
+  text-align: center;
+  vertical-align: middle;
+  font-size: 34px;
+  color: #4682b4;
+  margin: 10% 0;
+}
+.flexButtons{
+  display: flex;
+}
+
+.component {
+  height: 640px;
+  width: 640px;
+}
+
+.btn:hover {
+  color: #686868;
+}
+
+
+
+
+
+
+
+
+
+.parentWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.noCameraPhoto{
+text-align: center;
+font-weight: 500;
+font-family: 'Readex Pro';
+font-size: 18px;
+}
+.header{
+  padding: 10px;
+  margin: 20px;
+  width: 70%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.done-btn{
+  font-size: 10px;
+  border: none;
+  outline: none;
+  font-family: 'Readex Pro', sans-serif;
+  font-weight: 500;
+  background: black;
+  color: white;
+  text-transform: uppercase;
+  padding: 10px;
+}
+.done-button-div {
+  margin: 1rem ;
+  margin-bottom: 4rem  !important;  
+}
+.edit-photo-instructions {
+  margin: auto;
+  padding: 10px 25px;
+  border-radius: 13px;  
+  width: 700px;
+  height: 700px;
+  border-radius: 0px;
+
+}
+.edit-photo-actions {
+  width: 70%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.edit-photo-button {
+  border: 1px solid #616161;
+  border-radius: 6px;
+  display: flex;
+  font-size: 10px;
+  font-family: 'Readex Pro', sans-serif;
+  font-weight: 500;
+  padding: 10px;
+  margin-right: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.retake-btn{
+  border: 1px solid #616161;
+  border-radius: 6px;
+  display: flex;
+  font-size: 10px;
+  text-transform: uppercase;
+  background: transparent;
+  font-family: 'Readex Pro', sans-serif;
+  font-weight: 500;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.edit-photo-button {
+  margin: 10px;
+  display: inline-block;
+}
+@media all and (max-width:800px){
+  .header{
+      width: 90%;
+
+  }
+  .edit-photo-actions {
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+  }
+  .cropper-editor{ width:100% !important;height:300px !important;border: #6d9cba 2px solid; }
+  .edit-photo-instructions {
+      max-height: 500px !important;
+      min-height: 300px;
+      height: 100% !important;
+      margin: auto;
+      width: auto !important;
+    }
+}
+
+.edit-photo-div {
+  text-align: center;
+}
 
 .edit-photo-instructions {
   margin: auto;
@@ -97,9 +323,6 @@ font-size: 14px;
   outline: none;
   font-family: 'Readex Pro', sans-serif;
   font-weight: 500;
-  display:flex;
-  justify-content: center;
-  align-items: center;
   background: black;
   color: white;
   text-transform: uppercase;
@@ -121,10 +344,6 @@ font-size: 14px;
 .done-button-div {
   margin: 1rem ;
   margin-bottom: 4rem  !important;  
-  display: flex;
-  
-  justify-content: center;
-  align-items: center;
 }
 
 .done-button {
@@ -138,9 +357,6 @@ font-size: 14px;
   font-size: 34px;
   color: #4682b4;
   margin: 10% 0;
-}
-.flexButtons{
-  display: flex;
 }
 
 .component {
@@ -178,7 +394,7 @@ font-size: 14px;
     min-height: 300px;
     height: 100% !important;
     margin: auto;
-    width: auto !important;
+    width: 100% !important;
   }
 
   .component {
@@ -252,7 +468,7 @@ font-size: 14px;
   z-index: 1;
   opacity: 1;
   background-repeat: no-repeat;
-	background-position: center;
+  background-position: center;
   
 }
 .cropper-face.cropper-move
@@ -267,3 +483,181 @@ z-index: 5;
   }
 } */
 
+
+.resize-container {
+  position: relative;
+  display: inline-block;
+  cursor: move;
+  margin: 0 auto;
+}
+
+.resize-container img {
+  display: block
+}
+
+.resize-container:hover img,
+.resize-container:active img {
+  outline: 2px dashed rgba(222, 60, 80, .9);
+  /* overflow:visible; */
+}
+
+.resize-container img{
+
+  overflow: hidden;
+}
+/* .resize-image:hover {
+} */
+
+.resize-handle-ne,
+.resize-handle-se,
+.resize-handle-nw,
+.resize-handle-sw {
+  position: absolute;
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: rgba(222, 60, 80, .9);
+  z-index: 999;
+}
+
+.resize-handle-nw {
+  top: -5px;
+  left: -5px;
+  cursor: nw-resize;
+}
+
+.resize-handle-sw {
+  bottom: -5px;
+  left: -5px;
+  cursor: sw-resize;
+}
+
+.resize-handle-ne {
+  top: -5px;
+  right: -5px;
+  cursor: ne-resize;
+}
+
+.resize-handle-se {
+  bottom: -5px;
+  right: -5px;
+  cursor: se-resize;
+}
+
+.overlay {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  /* width: 100% !important; */
+  z-index: 999;
+  align-self: center;
+  width: 646px!important;
+  height: 640px!important;
+  /* border: solid 2px rgba(222, 60, 80, .9); */
+  box-sizing: content-box;
+  pointer-events: none;
+}
+
+.overlay:after,
+.overlay:before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 204px;
+  height: 40px;
+  /* border-left: dashed 2px rgba(222, 60, 80, .9);
+  border-right: dashed 2px rgba(222, 60, 80, .9); */
+}
+
+.overlay:before {
+  top: 0;
+  margin-left: -2px;
+  margin-top: -40px;
+}
+
+.overlay:after {
+  bottom: 0;
+  margin-left: -2px;
+  margin-bottom: -40px;
+}
+
+.overlay-inner:after,
+.overlay-inner:before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 40px;
+  height: 204px;
+  border-top: dashed 2px rgba(222, 60, 80, .9);
+  border-bottom: dashed 2px rgba(222, 60, 80, .9);
+}
+
+.overlay-inner:before {
+  left: 0;
+  margin-left: -40px;
+  margin-top: -2px;
+}
+
+.overlay-inner:after {
+  right: 0;
+  margin-right: -40px;
+  margin-top: -2px;
+}
+
+.btn-crop {
+  position: absolute;
+  vertical-align: bottom;
+  right: 5px;
+  bottom: 5px;
+  padding: 6px 10px;
+  z-index: 999;
+  background-color: rgb(222, 60, 80);
+  border: none;
+  border-radius: 5px;
+  color: #FFF;
+}
+
+.btn-crop img {
+  vertical-align: middle;
+  margin-left: 8px;
+}
+
+.component {
+
+  padding-top: 3px;
+}
+
+.overlay-inner {
+  width: 100%;
+}
+
+@media only screen and (max-width: 780px) {
+
+  .overlay {
+      position: absolute;
+      z-index: 999;
+      width: 100%;
+      height: auto;
+      /* border: solid 2px rgba(222, 60, 80, .9); */
+      box-sizing: content-box;
+      pointer-events: none;
+  }
+  
+  .resize-image {
+      width: 100%;
+  }
+
+}
+
+
+
+
+@media screen and (min-width:320px) and (max-width: 767px)
+{
+.overlay
+{
+  height: auto !important;
+    width: 100% !important;
+}	
+
+}
