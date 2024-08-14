@@ -119,8 +119,7 @@ const EditPhoto = () => {
         Make any adjestments to fit the blue outlines for the best results.
       </p>
       <p className="heading-sub">
-        Note: You can reposition the image by dragging the edges or corners of
-        the crop rectangle, or move the picture.
+        Note: If your photo doesn't meet the above 3 steps, please retake a photo until it does. Failing to do so will result in wrongly sized hairstyles covering your forehead or face
       </p>
       <div style={{padding:'24px',display:'flex',justifyContent:'center',alignItems:'center',margin:'auto'}}>
       <div className="edit-photo-instructions col-sm-12">
