@@ -220,7 +220,7 @@ font-size: 18px;
     width: 100%;
     justify-content: center;
   }
-  .cropper-editor{ width:100% !important;height:400px !important;border: #6d9cba 2px solid;margin: auto; }
+  .cropper-editor{ width:97% !important;height:400px !important;border: #6d9cba 2px solid;margin: auto; }
   .edit-photo-instructions {
       max-height: 500px !important;
       min-height: 300px;
