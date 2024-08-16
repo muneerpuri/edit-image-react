@@ -122,56 +122,11 @@ const EditPhoto = () => {
 
   return (
     <div className="edit-photo-div container-edit-photo">
-      <p className="heading-top">
-        Instructions
-      </p>
-      {/* <p className="heading-top">
-        Make any adjestments to fit the blue outlines for the best results.
-      </p> */}
-      <List>
-        {instructions.map((instruction, index) => (
-          <div style={{display:"flex",justifyContent:"flex-start",alignItems:"center"}}>
-          <CircleIcon style={{ fontSize: "10px"  ,marginRight:"10px"}} />{" "}
-          <p className="heading-sub" style={{textAlign:"left"}}>{instruction}</p>
-      </div>
-        ))}
-      </List>
-      <p className="heading-sub">
-        Note: If your photo doesn't meet the above 3 steps, please retake a
-        photo until it does. Failing to do so will result in wrongly sized
-        hairstyles covering your forehead or face
-      </p>
-      <p className="heading-top"  style={{textAlign:"left",marginLeft:"10px"}}>YOUR PHOTO:</p>
-
-      <div style={{display:"flex",justifyContent:"flex-start",alignItems:"center"}}>
-            <CircleIcon style={{ fontSize: "10px"  ,marginRight:"10px"}} />{" "}
-            <p className="heading-sub" style={{textAlign:"left"}}>{ "You can use two fingers on your photo to make it bigger or smaller"}</p>
-        </div>
-      <p className="heading-top" style={{textAlign:"left",marginLeft:"10px"}}>BLUE GRID:</p>
-      {[
-        "You can use one finger to drag the grid up or down",
-        "Use the blue square to make the grid smaller or larger",
-        "Use one finger to drag the grid around to fit your photo",
-      ].map((instruction, index) => (
-        <div style={{display:"flex",justifyContent:"flex-start",alignItems:"center"}}>
-            <CircleIcon style={{ fontSize: "10px"  ,marginRight:"10px"}} />{" "}
-            <p className="heading-sub" style={{textAlign:"left"}}>{instruction}</p>
-        </div>
-      ))}
-      <div
-        style={{
-          padding: "24px",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          margin: "auto",
-        }}
-      >
-        <div className="edit-photo-instructions col-sm-12">
+      
           <Cropper
             src={imageToBeCropped}
             id="imgEdit"
-            style={{ height: "646px", width: "640px" }}
+            style={{ height: "646px", width: "640px",marginTop:"20px" }}
             className="cropper-editor"
             //dragMode="move"
             minContainerWidth={100}
@@ -182,8 +137,6 @@ const EditPhoto = () => {
             viewMode={0}
             autoCropArea={1}
           />
-        </div>
-      </div>
       <div className="edit-photo-actions">
         <span className="flexButtons">
           {" "}
@@ -221,9 +174,45 @@ const EditPhoto = () => {
       <div className="done-button-div">
         <button className="done-btn" onClick={() => saveImg()} size="large">
           <DoneIcon style={{ color: "white", paddingRight: "5px" }} />
-          Done
+          Save
         </button>
       </div>
+      <p className="heading-top">
+        Instructions
+      </p>
+      {/* <p className="heading-top">
+        Make any adjestments to fit the blue outlines for the best results.
+      </p> */}
+      <List>
+        {instructions.map((instruction, index) => (
+          <div style={{display:"flex",justifyContent:"flex-start",alignItems:"center"}}>
+          <CircleIcon style={{ fontSize: "10px"  ,marginRight:"10px"}} />{" "}
+          <p className="heading-sub" style={{textAlign:"left"}}>{instruction}</p>
+      </div>
+        ))}
+      </List>
+      <p className="heading-sub">
+        Note: If your photo doesn't meet the above 3 steps, please retake a
+        photo until it does. Failing to do so will result in wrongly sized
+        hairstyles covering your forehead or face
+      </p>
+      <p className="heading-top"  style={{textAlign:"left",marginLeft:"10px"}}>YOUR PHOTO:</p>
+
+      <div style={{display:"flex",justifyContent:"flex-start",alignItems:"center"}}>
+            <CircleIcon style={{ fontSize: "10px"  ,marginRight:"10px"}} />{" "}
+            <p className="heading-sub" style={{textAlign:"left"}}>{ "You can use two fingers on your photo to make it bigger or smaller"}</p>
+        </div>
+      <p className="heading-top" style={{textAlign:"left",marginLeft:"10px"}}>BLUE GRID:</p>
+      {[
+        "You can use one finger to drag the grid up or down",
+        "Use the blue square to make the grid smaller or larger",
+        "Use one finger to drag the grid around to fit your photo",
+      ].map((instruction, index) => (
+        <div style={{display:"flex",justifyContent:"flex-start",alignItems:"center"}}>
+            <CircleIcon style={{ fontSize: "10px"  ,marginRight:"10px"}} />{" "}
+            <p className="heading-sub" style={{textAlign:"left"}}>{instruction}</p>
+        </div>
+      ))}
     </div>
   );
 };
