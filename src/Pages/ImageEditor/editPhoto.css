@@ -86,7 +86,6 @@ font-size: 14px;
 
 .done-button-div {
   margin: 1rem ;
-  margin-bottom: 4rem  !important;  
   display: flex;
   
   justify-content: center;
@@ -109,10 +108,10 @@ font-size: 14px;
   display: flex;
 }
 
-.component {
+/* .component {
   height: 640px;
   width: 640px;
-}
+} */
 
 .btn:hover {
   color: #686868;
@@ -159,7 +158,7 @@ font-size: 18px;
 }
 .done-button-div {
   margin: 1rem ;
-  margin-bottom: 4rem  !important;  
+  /* margin-bottom: 4rem  !important;   */
 }
 .edit-photo-instructions {
   margin: auto;
@@ -349,7 +348,7 @@ font-size: 14px;
 }
 .done-button-div {
   margin: 1rem ;
-  margin-bottom: 4rem  !important;  
+  /* margin-bottom: 4rem  !important;   */
 }
 
 .done-button {
@@ -365,10 +364,10 @@ font-size: 14px;
   margin: 10% 0;
 }
 
-.component {
+/* .component {
   height: 640px;
   width: 640px;
-}
+} */
 
 .btn:hover {
   color: #686868;
@@ -556,8 +555,8 @@ z-index: 5;
   /* width: 100% !important; */
   z-index: 999;
   align-self: center;
-  width: 646px!important;
-  height: 640px!important;
+  /* width: 646px!important;
+  height: 640px!important; */
   /* border: solid 2px rgba(222, 60, 80, .9); */
   box-sizing: content-box;
   pointer-events: none;

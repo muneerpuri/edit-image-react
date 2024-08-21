@@ -126,14 +126,14 @@ const EditPhoto = () => {
           <Cropper
             src={imageToBeCropped}
             id="imgEdit"
-            style={{ height: "646px", width: "640px",marginTop:"20px" }}
+            style={{ marginTop:"20px" }}
             className="cropper-editor"
             //dragMode="move"
             minContainerWidth={100}
-            initialAspectRatio={640 / 646}
+            initialAspectRatio={740 / 746}
             guides={true}
             ref={cropperRef}
-            aspectRatio={640 / 646}
+            aspectRatio={740 / 746}
             viewMode={0}
             autoCropArea={1}
           />
