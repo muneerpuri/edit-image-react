@@ -25,6 +25,8 @@ font-size: 14px;
   text-align: center;font-size: 14px;
   font-family: 'Readex Pro', sans-serif;
   font-weight: 300;
+  padding: 0;
+  margin: 3px 0;
   
 }
 .edit-photo-heading2 {
@@ -84,7 +86,6 @@ font-size: 14px;
 
 .done-button-div {
   margin: 1rem ;
-  margin-bottom: 4rem  !important;  
   display: flex;
   
   justify-content: center;
@@ -107,10 +108,10 @@ font-size: 14px;
   display: flex;
 }
 
-.component {
+/* .component {
   height: 640px;
   width: 640px;
-}
+} */
 
 .btn:hover {
   color: #686868;
@@ -157,7 +158,7 @@ font-size: 18px;
 }
 .done-button-div {
   margin: 1rem ;
-  margin-bottom: 4rem  !important;  
+  /* margin-bottom: 4rem  !important;   */
 }
 .edit-photo-instructions {
   margin: auto;
@@ -166,6 +167,10 @@ font-size: 18px;
   width: 700px;
   height: 700px;
   border-radius: 0px;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
 }
 .edit-photo-actions {
@@ -214,7 +219,7 @@ font-size: 18px;
     width: 100%;
     justify-content: center;
   }
-  .cropper-editor{ width:100% !important;height:300px !important;border: #6d9cba 2px solid; }
+  .cropper-editor{ width:97% !important;height:400px !important;border: #6d9cba 2px solid;margin: auto; }
   .edit-photo-instructions {
       max-height: 500px !important;
       min-height: 300px;
@@ -343,7 +348,7 @@ font-size: 14px;
 }
 .done-button-div {
   margin: 1rem ;
-  margin-bottom: 4rem  !important;  
+  /* margin-bottom: 4rem  !important;   */
 }
 
 .done-button {
@@ -359,10 +364,10 @@ font-size: 14px;
   margin: 10% 0;
 }
 
-.component {
+/* .component {
   height: 640px;
   width: 640px;
-}
+} */
 
 .btn:hover {
   color: #686868;
@@ -370,10 +375,9 @@ font-size: 14px;
 
 @media only screen and (max-width: 560px) {
 
-  .cropper-editor{ width:100% !important;height:300px !important;border: #6d9cba 2px solid; }
   .cropper-container.cropper-bg{
     width: 100% !important;
-    height: 300px !important;
+    height: 400px !important;
   }
   .rotation-angle{
     margin:0 6px 0px 6px ;
@@ -551,8 +555,8 @@ z-index: 5;
   /* width: 100% !important; */
   z-index: 999;
   align-self: center;
-  width: 646px!important;
-  height: 640px!important;
+  /* width: 646px!important;
+  height: 640px!important; */
   /* border: solid 2px rgba(222, 60, 80, .9); */
   box-sizing: content-box;
   pointer-events: none;
